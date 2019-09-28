@@ -1,9 +1,9 @@
 /* General CSS */
 
 body {
-  background-color: #fff;
-  color: #333;
-  font-family: sans-serif;
+  background-color: #1a1d20;
+  color: #f1f1f1;
+  font-family: segoe ui;
   font-size: 10pt;
   margin-right: 100px;
   margin-left: 100px;
@@ -15,7 +15,7 @@ h1 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #06c;
+  color: #299bd1;
   margin-top: 2em;
   margin-bottom: 1em;
   padding: 25px;
@@ -48,19 +48,25 @@ table {
 }
 
 td, th {
-  border: 1px solid #ccc;
+  border: 1px solid #434346;
   padding: 2px 12px;
   font-size: 10pt;
 }
 
 code, samp, var {
-  background-color:#FAFAFA;
+  color: #e8912d;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  border-color: #3b3e41;
+  padding: 1px;
+  background-color:#212428;
   white-space: nowrap
 }
 
 pre {
   padding:6px 10px;
-  background-color:#FAFAFA;
+  background-color:#212428;
   border:1px solid #bbb;
   overflow:auto;
 }
@@ -75,15 +81,17 @@ code.bad, code.badcode {
 }
 
 pre.bad, pre.badcode {
-  background-color:#ffe6d8;
-  border-top:1px inset #a03;
-  border-left:1px inset #a03;
+  background-color:#311418;
 }
 
 hr {
   margin-top: 3.5em;
   border-width: 1px;
   color: #fff;
+}
+
+a {
+  color: #299bd1;
 }
 
 /* TOC CSS */
