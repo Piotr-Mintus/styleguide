@@ -19,7 +19,7 @@
 
 <p>The Monolith Productions C++ Style Guide is based off of the 
 
-<a href=https://google.github.io/styleguide/cppguide.html" target="_blank">
+<a href=https://google.github.io/styleguide/cppguide.html target="_blank">
 Google C++ Style Guide
 </a>. 
 
@@ -231,7 +231,7 @@ prevent multiple inclusion.</p>
 
 <h3 id="Forward_Declarations">Forward Declarations</h3>
 
-<p>Avoid using manually written forward declarations where possible.
+<p>Avoid using forward declarations in source <code>.cpp</code> files.
 Instead, <code>#include</code> the headers you need.</p>
 
 <p class="definition"></p>
@@ -479,9 +479,8 @@ system-specific code small and localized. Example:</p>
 
 <h3 id="Namespaces">Namespaces</h3>
 
-<p>With few exceptions, place code in a namespace. Namespaces
-should have unique names based on the project name, and possibly
-its path. Do not use <i>using-directives</i> (e.g.
+<p>With few exceptions, place code in a namespace. 
+Do not use <i>using-directives</i> (e.g.
 <code>using namespace foo</code>). Do not use
 inline namespaces. For unnamed namespaces, see
 <a href="#Unnamed_Namespaces_and_Static_Variables">Unnamed Namespaces and
@@ -2493,7 +2492,7 @@ initialization and C++ casts can often help avoid this
 ambiguity. Additionally, C++ casts are more visible when searching for
 them.</p>
 
-<p>C casts also cast away const which is a fundamental tool for writing concurrent code.</p>
+<p>C casts can also cast away const which is a fundamental tool when writing concurrent code.</p>
 
 <p class="cons"></p>
 <p>The C++-style cast syntax is verbose and cumbersome.</p>
@@ -2642,9 +2641,8 @@ for your type only if your type represents a value, and
 <code>&lt;&lt;</code> writes out a human-readable string
 representation of that value. Avoid exposing implementation
 details in the output of <code>&lt;&lt;</code>; if you need to print
-object internals for debugging, use named functions instead
-(a method named <code>WBDebugString()</code> is the most common
-convention).</p>
+object internals for debugging, use named functions instead.
+</p>
 
 <h3 id="Preincrement_and_Predecrement">Preincrement and Predecrement</h3>
 
