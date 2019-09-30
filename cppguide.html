@@ -2526,7 +2526,13 @@ explicit type conversion is necessary. </p>
   pointer types to and from integer and other pointer
   types. Use this
   only if you know what you are doing and you understand the aliasing
-  issues. </li>
+  issues. Also, consider the alternative
+  <code>wb::bit_cast</code>.</li>	
+
+  <li>Use <code>wb::bit_cast</code> to interpret the raw bits of a	
+  value using a different type of the same size (a type pun), such as	
+  interpreting the bits of a <code>double</code> as	
+  <code>int64</code>.</li>
 
 </ul>
 
@@ -3192,7 +3198,7 @@ auto i = y.Find(key);
   the reader can focus on the meaningful parts of the code:
   </p><pre class="neutralcode">
 std::unique_ptr&lt;WidgetWithBellsAndWhistles&gt; widget_ptr = wbstd::make_unique&lt;WidgetWithBellsAndWhistles&gt;(arg1, arg2);
-std::hash_map&lt;std::string, std::unique_ptr&lt;WidgetWithBellsAndWhistles&gt;&gt;::const_iterator it = my_map_.find(key);
+WB::FlatHashMap&lt;std::string, std::unique_ptr&lt;WidgetWithBellsAndWhistles&gt;&gt;::const_iterator it = my_map_.find(key);
 std::array&lt;int, 0&gt; numbers = {4, 8, 15, 16, 23, 42};</pre>
 
   <pre class="goodcode">auto widget_ptr = wbstd::make_unique&lt;WidgetWithBellsAndWhistles&gt;(arg1, arg2);
@@ -3743,7 +3749,7 @@ guide, the following C++ features may not be used:</p>
 
 <p class="decision"></p>
 <p>Do not use nonstandard extensions. You may use portability wrappers that
-  are implemented using nonstandard extensions found in <code>platform.h</code></p>
+  are implemented using nonstandard extensions found in <code>runtime\include\runtime\root</code></p>
 
 <h3 id="Aliases">Aliases</h3>
 
